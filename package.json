@@ -10,6 +10,7 @@
     "flow": "flow",
     "flow-stop": "flow stop",
     "test:unit": "jest",
+    "test:watch": "jest --watch",
     "test": "yarn lint && yarn flow && jest"
   },
   "dependencies": {
