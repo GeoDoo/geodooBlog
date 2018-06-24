@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "lint": "eslint --fix src",
-    "pretty": "prettier --semi false --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
+    "lint": "eslint src",
+    "pretty": "prettier \"**/*.{json,md,scss}\"",
     "precommit": "lint-staged && yarn test",
     "flow": "flow",
     "flow-stop": "flow stop",
@@ -39,8 +39,12 @@
     "react-test-renderer": "16.3.1"
   },
   "lint-staged": {
-    "*.js": [
-      "yarn pretty",
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md,scss}": [
+      "prettier --write",
       "git add"
     ]
   },
