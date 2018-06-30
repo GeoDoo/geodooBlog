@@ -1,19 +1,4 @@
 import React from 'react'
-import {
-  Text, View,
-} from 'react-native'
 import BlogPostsListItem from './BlogPostsListItem'
 
-export default () => (
-  <View>
-    <Text>
-      Blog posts
-    </Text>
-    <BlogPostsListItem />
-    <BlogPostsListItem />
-    <BlogPostsListItem />
-    <BlogPostsListItem />
-    <BlogPostsListItem />
-    <BlogPostsListItem />
-  </View>
-)
+export default ({ posts }) => posts.map(post => <BlogPostsListItem key={post.id} post={post} />)

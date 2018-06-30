@@ -4,10 +4,10 @@ import {
 } from 'react-native'
 import styles from '../styles'
 
-export default () => (
+export default ({ post }) => (
   <View>
     <Text style={styles.listItem}>
-      Blog post title
+      {post.title.rendered}
     </Text>
   </View>
 )
