@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
   "plugins": [
     "react",
     "flowtype",
@@ -8,13 +8,10 @@
     "import"
   ],
   "rules": {
-    "react/jsx-filename-extension": [
-      1, { "extensions": [".js", ".jsx"] }
-    ],
+    "flowtype/object-type-delimiter": ["error", "semicolon"],
     "react/prefer-stateless-function": [
       2, { "ignorePureComponents": true }
     ],
-    "react/forbid-prop-types": [0, { "forbid": [] }],
     "import/extensions": [1, "never", { "svg": "always" }],
     "import/no-extraneous-dependencies": [
       "error",
@@ -24,9 +21,55 @@
         "peerDependencies": false
       }
     ],
+    "arrow-body-style": ["warn", "as-needed"],
+    "comma-dangle": ["warn", "always-multiline"],
+    "linebreak-style": ["error", "unix"],
+    "no-underscore-dangle": 0,
+    "import/no-named-as-default-member": 1,
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": 0,
+    "react/prop-types": 0,
+    "react/no-unused-prop-types": 0,
+    "react/require-default-props": 0,
+    "react/no-typos": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "no-static-element-interactions": 0,
+    "accessible-emoji": 0,
+    "alt-text": 0,
+    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/aria-activedescendant-has-tabindex": 0,
+    "jsx-a11y/aria-props": 0,
+    "jsx-a11y/aria-proptypes": 0,
+    "jsx-a11y/aria-role": 0,
+    "jsx-a11y/aria-unsupported-elements": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/heading-has-content": 0,
+    "jsx-a11y/html-has-lang": 0,
+    "jsx-a11y/iframe-has-title": 0,
+    "jsx-a11y/img-redundant-alt": 0,
+    "jsx-a11y/interactive-supports-focus": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "jsx-a11y/mouse-events-have-key-events": 0,
+    "jsx-a11y/no-access-key": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/no-distracting-elements": 0,
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": 0,
+    "jsx-a11y/no-noninteractive-tabindex": 0,
+    "jsx-a11y/no-onchange": 0,
+    "jsx-a11y/no-redundant-roles": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/role-has-required-aria-props": 0,
+    "jsx-a11y/role-supports-aria-props": 0,
+    "jsx-a11y/scope": 0,
+    "jsx-a11y/tabindex-no-positive": 0,
     "semi": ["error", "never"]
   },
   "env": {
+    "browser": true,
     "jest": true
   }
 }
