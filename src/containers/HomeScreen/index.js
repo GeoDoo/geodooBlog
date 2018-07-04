@@ -1,31 +1,36 @@
-import React from 'react'
-import {
-  Text, View, Button,
-} from 'react-native'
-import { connect } from 'react-redux'
-import { fetchPosts } from '../../core/actions'
-import BlogPostsList from './components/BlogPostsList'
-import styles from './styles'
+import React from "react"
+import { Text, View } from "react-native"
+import { connect } from "react-redux"
+import { fetchPosts } from "../../core/actions"
+import BlogPostsList from "./components/BlogPostsList"
+import styles from "./styles"
 
-export const HomeScreen = props => (
-  <View>
-    <Text style={styles.header}>
-      Homepage
-    </Text>
-    <Button
-      title="Fetch posts"
-      onPress={props.fetchPosts}
-    />
-    <BlogPostsList posts={props.posts} />
-  </View>
-)
+export class HomeScreen extends React.Component {
+  componentDidMount() {
+    const { fetchPostsEpic } = this.props
+    fetchPostsEpic()
+  }
+
+  render() {
+    const { posts } = this.props
+    return (
+      <View>
+        <Text style={styles.header}>Homepage</Text>
+        <BlogPostsList posts={posts} />
+      </View>
+    )
+  }
+}
 
 const mapStateToProps = state => ({
   posts: state.posts,
 })
 
 const mapDispatchToProps = {
-  fetchPosts,
+  fetchPostsEpic: fetchPosts,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(HomeScreen)
