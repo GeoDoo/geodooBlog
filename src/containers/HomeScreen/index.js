@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { ScrollView, Button } from 'react-native'
 import { connect } from 'react-redux'
 import Spinner from 'react-native-loading-spinner-overlay'
 import { fetchPosts } from '../../core/actions'
@@ -14,7 +14,7 @@ export class HomeScreen extends React.Component {
   render() {
     const { posts } = this.props
     return (
-      <View>
+      <ScrollView>
         <Spinner
           visible={posts.length === 0}
           textContent="Loading..."
@@ -22,7 +22,8 @@ export class HomeScreen extends React.Component {
           overlayColor="rgba(240, 240, 240, 0.5)"
         />
         <BlogPostsList posts={posts} />
-      </View>
+        <Button title="Load more" onPress={() => {}} />
+      </ScrollView>
     )
   }
 }
